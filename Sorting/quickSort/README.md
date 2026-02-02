@@ -1,52 +1,41 @@
-Description
+# Description
 
-Quick Sort is a classic divide and conquer sorting algorithm.
-It selects a pivot element, partitions the array around the pivot, and recursively sorts the resulting subarrays.
+**Quick Sort** is a classic **divide and conquer** sorting algorithm.
+It selects a **pivot** element, partitions the array into elements less than the pivot and elements greater than the pivot, recursively sorts the partitions, and then combines them into a single sorted array.
 
-Quick Sort is not stable but works very efficiently in practice on large datasets.
+Quick Sort is **not stable** but works efficiently on large datasets and is widely used due to its **in-place** sorting capability.
 
-How It Works
+---
 
-Select a pivot element.
+# How It Works
 
-Partition the array into elements smaller and greater than the pivot.
+1. Choose a pivot element from the array (commonly first, last, middle, or random element).
+2. Partition the array such that elements less than the pivot go to the left and elements greater go to the right.
+3. Recursively apply Quick Sort to the left and right partitions.
+4. Combine the partitions and pivot to form a sorted array.
 
-Recursively sort the left partition.
+---
 
-Recursively sort the right partition.
+# Time & Space Complexity
 
-Repeat until the entire array is sorted.
+| Case        | Time Complexity | Space Complexity | Stable? |
+| ----------- | --------------- | ---------------- | ------- |
+| Best Case   | O(n log n)      | O(log n)         | No      |
+| Average     | O(n log n)      | O(log n)         | No      |
+| Worst Case  | O(n²)           | O(log n)         | No      |
 
-Time & Space Complexity
-Case	Time Complexity	Space Complexity	Stable?
-Best Case	O(n log n)	O(log n)	No
-Average	O(n log n)	O(log n)	No
-Worst Case	O(n²)	O(n)	No
+**Explanation:**
 
-Explanation:
+* **Time Complexity:**
+    - Quick Sort uses a divide-and-conquer approach:
+      - Partitioning → O(n) work per recursion
+      - Recursion depth → log n on average
+    - Total average: O(n log n), worst case O(n²) when pivot selection is poor
 
-Time Complexity:
+* **Space Complexity:**
+    - O(log n) extra space for recursion stack (in-place partitioning)
+    - Quick Sort is **in-place**, no extra arrays required
 
-Quick Sort uses a divide-and-conquer approach:
+* **Stable:** No, equal elements may change their relative order
 
-Partitions the array around a pivot
-
-Balanced partitions → log n levels
-
-Partitioning work → O(n) per level
-
-Best and average cases: O(n log n)
-
-Worst case: O(n²) when partitions are highly unbalanced
-
-Space Complexity:
-
-O(log n) space from recursive calls in the average case
-
-O(n) space in the worst case due to deep recursion
-
-Quick Sort is usually in-place
-
-Stable: No, equal elements may change their relative order
-
-Adaptive: No, performance does not improve for nearly sorted arrays
+* **Adaptive:** No, performance does not improve for nearly sorted arrays
