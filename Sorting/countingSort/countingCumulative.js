@@ -16,7 +16,7 @@ function countingSort(arr) {
     }
     const output = new Array(arr.length);
 
-    for (let i = arr.length - 1; i >= 0; ++i) {
+    for (let i = arr.length - 1; i >= 0; --i) {
         let value = arr[i];
         let index = value - min;
         let pos = count[index] - 1;
