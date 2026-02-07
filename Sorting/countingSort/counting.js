@@ -19,5 +19,5 @@ function countingSort(arr) {
             count[i]--;
         }
     }
-    return res;
+    return arr;
 }
